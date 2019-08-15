@@ -1,0 +1,54 @@
+# PR-0001
+
+[NOTE]
+====
+This project has a dependency on
+
+https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes[jenkins-x-kubernetes buildpacks]
+
+It basically an extension of it, it was forked from it
+====
+
+## Scope of Feature
+This PR is basically a fix added to the initial work that had been done on this project. The fix consists in changing the name of the container of the build agent in the gradle5 buildpack. This name is specified in the *pipeline.yaml* file.
+
+## How to validate Feature
+To effectively validated that the PR fixes what it is suppose to fix:
+
+. Create or import a sample project with the *jx* command-line program.
++
+Execute:
++
+```
+jx create quickstart --pack gradle5 -g luminaraio 
+```
++
+and follow the instruction in the _quickstart import wizard_ and when promoted
+(_"select the quickstart you wish to create"_) choose *chose a gradle quickstart project*
+
++
+*OR*
+
++
+cd in the an existing gradle project folder and execute:
+
++
+```
+jx import --pack gradle5 -g luminaraio 
+```
+
+. Validate that the initial pipeline in *Jenkins X* was launched and wait for it ot complete then validate that a _successful promotion/deployment to the **staging**_ happened. To open **Jenkins**, you can execute:
+
++
+```
+jx console
+```
+
++
+Execute:
++
+```
+jx get application (1)
+```
+* You Should be able to obtain the url of the new created or imported application
+* You should be able to send a request to the staging URL and receive a valid response

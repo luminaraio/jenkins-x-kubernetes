@@ -13,4 +13,4 @@ ENTRYPOINT ["sh", "-c"]
 CMD ["exec java -jar vertx-app.jar -cluster"]
 
 # Copy your fat jar and the config file to the to the container
-COPY target/*.jar $VERTX_HOME/vertx-app.jar
+COPY target/REPLACE_ME_APP_NAME-*.jar $VERTX_HOME/vertx-app.jar

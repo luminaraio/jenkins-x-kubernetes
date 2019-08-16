@@ -18,4 +18,4 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.3.0 && \
     chmod +x /bin/grpc_health_probe
 
 # Copy your fat jar and the config file to the to the container
-COPY target/*.jar $VERTX_HOME/vertx-app.jar
+COPY target/REPLACE_ME_APP_NAME-*.jar $VERTX_HOME/vertx-app.jar

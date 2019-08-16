@@ -5,7 +5,7 @@ MAINTAINER Luminara Team <tech@luminara.io>
 # Set the location of the verticles
 ENV VERTX_HOME /usr/local/vertx
 
-EXPOSE 9000
+EXPOSE 8080
 
 # Launch the verticle
 WORKDIR $VERTX_HOME
